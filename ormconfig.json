@@ -1,10 +1,47 @@
-{
-  "type": "postgres",
-  "host": "ec2-34-195-233-155.compute-1.amazonaws.com",
-  "port": 5432,
-  "username": "tekbxihpzzxlry",
-  "password": "01ff90084af142ae22124f1019b709471c4604c266ae34ef12d858edea8d27e2",
-  "database": "dehrnp4h4e2ova",
-  "entities": ["dist/entities/*.js"],
-  "migrations": ["dist/migrations/*.js"]
-}
+[
+  {
+    "name": "server",
+    "type": "postgres",
+    "synchronize": false,
+    "logging": true
+  },
+  {
+    "name": "development",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "postgres",
+    "database": "bitclout",
+    "synchronize": false,
+    "logging": true,
+    "entities": ["src/entities/**/*.ts"],
+    "migrations": ["src/migrations/**/*.ts"],
+    "subscribers": ["src/subscribers/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/migrations",
+      "subscribersDir": "src/subscribers"
+    }
+  },
+  {
+    "name": "test",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "",
+    "database": "",
+    "synchronize": true,
+    "logging": false,
+    "dropSchema": true,
+    "entities": ["src/entities/**/*.ts"],
+    "migrations": ["src/migrations/**/*.ts"],
+    "subscribers": ["src/subscribers/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/entities",
+      "migrationsDir": "src/migrations",
+      "subscribersDir": "src/subscribers"
+    }
+  }
+]
